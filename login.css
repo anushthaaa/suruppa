@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+
+body {
+    background-color: #fdfbed;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-logo {
+    font-size: 48px;
+    color: #a84d24;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 28px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    color: var(--text-body);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.login-box h2 {
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.login-box p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.login-box label {
+    text-align: left;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.login-box input {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fdfbe9;
+    font-size: 0.95rem;
+}
+
+.login-box button {
+    margin-top: 1rem;
+    padding: 0.6rem;
+    background-color: #c05a2c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+
+
+.login-box button:hover {
+    background: #a84d24;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 1rem;
+    background-color: #f4f1df;
+    color: #555;
+}

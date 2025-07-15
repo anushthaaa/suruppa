@@ -1,0 +1,112 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+}
+
+body {
+  background-color: #fdfbed;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  max-width: 800px;        
+  padding: 1.5rem;          
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-header h2 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.card-header p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.add-btn {
+  background-color: #cfae83;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-btn:hover {
+  background-color: #694f30;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #fdfbe9;
+  border-bottom: 2px solid #e2d7b9;
+}
+td {
+  padding: 0.8rem 0.8rem;  
+}
+
+th, td {
+  text-align: center;
+  padding: 0.9rem 0.5rem;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #eee;
+}
+tbody tr:hover {
+  background-color: #f4e7d4; /* light brown / warm cream */
+  cursor: pointer;
+}
+
+
+.icon-btn {
+ 
+  padding: 0.6rem 0.8rem;
+  margin-right: 0.4rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+
+}
+
+.icon-btn.edit {
+  color: black;
+}
+
+.icon-btn.delete {
+  color: #e61f1f;
+}
+
+.icon-btn:hover {
+  background-color: #cfae83;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <!-- Admin Dashboard -->
+    <div class="container" id="adminDashboard">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-mug-hot"></i>
+                </div>
+                <div class="logo-text">SU<span>रुप्प</span> <small
+                        style="font-size: 16px; color: var(--text-body);">Admin Portal</small></div>
+            </div>
+            <div class="admin-info">
+                <div class="admin-name">
+                    <i class="fas fa-user-circle"></i> Admin User
+                </div>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="nav-item active">
+                    <div class="nav-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <div>Order Management</div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div>Menu Management</div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div>Analytics</div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div>Settings</div>
+                </div>
+            </div>
+</body>
+
+</html>

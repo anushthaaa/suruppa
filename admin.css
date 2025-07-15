@@ -1,0 +1,175 @@
+        :root {
+            --cream: #fffaf0;
+            --beige: #f7f3e8;
+            --card: #fefcf6;
+            --text-dark: #2e241c;
+            --text-body: #4e463e;
+            --gold: #d0aa7b;
+            --primary: #c05a2c;
+            --primary-hover: #a84d24;
+            --accent: #6d9e6f;
+            --border: #e7e2cf;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Playfair Display', serif; */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f9f5f0, #f0e6dc);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--text-body);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 250, 240, 0.95);
+            border-radius: 12px;
+            padding: 15px 25px;
+            box-shadow: var(--shadow);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            color: var(--gold);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: var(--text-dark);
+        }
+
+        .admin-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .admin-name {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .logout-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logout-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            display: flex;
+            gap: 20px;
+            height: 75vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background: rgba(255, 250, 240, 0.95);
+            border-radius: 12px;
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-item {
+            padding: 14px 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-body);
+            text-decoration: none;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: rgba(208, 170, 123, 0.1);
+            color: var(--primary);
+        }
+
+        .nav-item.active {
+            background: rgba(208, 170, 123, 0.15);
+            color: var(--primary);
+            border-left: 3px solid var(--primary);
+        }
+
+        .nav-icon {
+            width: 24px;
+            font-size: 18px;
+        }
+
+        /* Content Panel Styles */
+        /* .content-panel {
+            flex: 1;
+            background: rgba(255, 250, 240, 0.95);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            overflow-y: auto;
+        }
+
+        .panel-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .panel-title i {
+            color: var(--primary);
+        } */

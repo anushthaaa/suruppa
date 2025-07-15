@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUरुप्प • Authentic Nepali Tea Experience</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="#home" class="logo">
+                    <span class="logo__symbol">🍴</span>
+                    <span class="logo__text">SUरुप्प</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#how">How It Works</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#order">Order</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </nav>
+                <!-- the emojies are used from fontawesome.com -->
+                <a href="login.html"> <button class="btn btn-outline">
+                        Admin Login <i class="fa-solid fa-right-to-bracket"></i>
+                    </button></a>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to <span>SUरुप्प</span></h1>
+            <p>SUरुप्प brings you the finest Himalayan tea experience. Order fresh, authentic Nepali tea directly from
+                your table with our seamless digital ordering system.</p>
+            <a href="#menu" class="btn btn-primary">
+                View Menu & Order <i class="fa-solid fa-utensils"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="section" id="how">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Enjoy authentic Nepali tea in three simple steps</p>
+
+            <div class="description">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card__icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h3>Browse Our Menu</h3>
+                        <p>Explore our curated selection of authentic Nepali teas, each crafted with traditional recipes
+                            and premium ingredients.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon"><i class="fa-solid fa-tablet-screen-button"></i></div>
+                        <h3>Order From Your Table</h3>
+                        <p>Select your table number, choose your items, customize your order, and submit with a single
+                            tap.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>Fresh Delivery</h3>
+                        <p>Your order is sent directly to our kitchen. Enjoy freshly brewed tea served at your table
+                            within minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section menu" id="menu">
+        <div class="container">
+            <h2 class="section-title">Place Your Order</h2>
+            <p class="section-subtitle">Select your items and we'll get right on it.
+
+            </p>
+
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="image\masala_chiya.jpeg" alt="Masala Chiya">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">Masala Chiya</h3>
+                        <div class="menu-price">Rs. 35</div>
+                        <p class="menu-desc">Aromatic spiced tea with a blend of traditional Nepali spices.</p>
+                        <button class="btn btn-outline">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="image\milk_tea.jpeg" alt="Milk Tea">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">Milk Tea</h3>
+                        <div class="menu-price">Rs. 25</div>
+                        <p class="menu-desc">Classic Nepali milk tea, brewed to perfection.</p>
+                        <button class="btn btn-outline">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-img">
+                        <img src="image\honey_ginger_tea.jpeg" alt="Honey Ginger Tea">
+                    </div>
+                    <div class="menu-content">
+                        <h3 class="menu-title">Honey Ginger Tea</h3>
+                        <div class="menu-price">Rs. 150</div>
+                        <p class="menu-desc">Refreshing and zesty tea, perfect for a cold day.</p>
+                        <button class="btn btn-outline">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="order">
+        <div class="container">
+            <h2 class="section-title">Place Your Order</h2>
+            <p class="section-subtitle">Enjoy our teas at your table in minutes</p>
+
+            <div class="order-panel">
+                <form class="order-form">
+                    <div class="form-group">
+                        <label for="table">Table Number</label>
+                        <select id="table" required>
+                            <option value="">Select your table</option>
+                            <option value="1">Table 1</option>
+                            <option value="2">Table 2</option>
+                            <option value="3">Table 3</option>
+                            <option value="4">Table 4</option>
+                            <option value="5">Table 5</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="order">Your Order</label>
+                        <textarea id="order" placeholder="Enter your tea order and any special requests"></textarea>
+                    </div>
+
+                    <div class="form-group full">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Place Order <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">Our Tea Journey</h2>
+            <p class="section-subtitle">Tech in Tea.</p>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Authentic Nepali Tea Experience</h2>
+                    <p>SUरुप्प was born from a passion to share the rich tea culture of Nepal with the world. Our
+                        founders, third-generation tea growers from the Ilam region, bring decades of expertise in
+                        cultivating and brewing the finest Himalayan teas.</p>
+                    <p>We source our leaves directly from sustainable tea gardens in Nepal's eastern hills, where high
+                        altitude and misty conditions create the perfect environment for tea cultivation. Each blend is
+                        carefully crafted to preserve traditional flavors while appealing to modern palates.</p>
+                    <p>Our mission is to deliver an authentic Nepali tea experience - not just a beverage, but a moment
+                        of connection and tranquility.</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="image\chiya1.jpg" alt="about-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">SU<span>रुप्प</span></div>
+                    <p>Bringing authentic Nepali tea culture to your table since 2025. Experience the taste of the
+                        Himalayas with every cup.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#how">How It Works</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#order">Order Online</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977 9841XXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@suraupp.com</p>
+                    <p><i class="fas fa-clock"></i> Open Daily: 7AM - 9PM</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2023 SUरुप्प Nepali Tea. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
