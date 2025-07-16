@@ -150,7 +150,7 @@
         }
 
         /* Content Panel Styles */
-        /* .content-panel {
+        .content-panel {
             flex: 1;
             background: rgba(255, 250, 240, 0.95);
             border-radius: 12px;
@@ -172,4 +172,218 @@
 
         .panel-title i {
             color: var(--primary);
-        } */
+        }
+
+        /* Orders Panel Styles */
+        .orders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .order-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .order-id {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .order-time {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .order-table {
+            background: var(--beige);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .order-details {
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .order-total {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        .order-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .accept-btn {
+            background: var(--accent);
+            color: white;
+        }
+
+        .reject-btn {
+            background: #e74c3c;
+            color: white;
+        }
+
+
+        /* Card Styles */
+        .card {
+            background: rgba(255, 250, 240, 0.95);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+            /* display: flex;
+            align-items: center;
+            gap: 10px; */
+        }
+
+        .card-header p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+        }
+
+        .add-btn {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            display: flex;
+            justify-content: flex-end;
+            margin-left: 400px;
+
+        }
+
+        .add-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        thead {
+            background-color: rgba(208, 170, 123, 0.15);
+        }
+
+        th,
+        td {
+            padding: 1rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        td {
+            color: var(--text-body);
+            font-size: 0.95rem;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(247, 243, 232, 0.5);
+            cursor: pointer;
+        }
+
+        .icon-btn {
+
+            padding: 0.6rem 0.8rem;
+            margin-right: 0.4rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+
+        }
+
+        .icon-btn.edit {
+            color: black;
+        }
+
+        .icon-btn.delete {
+            color: #e61f1f;
+        }
+
+        .hidden {
+            display: none !important;
+        }

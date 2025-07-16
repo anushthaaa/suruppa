@@ -38,13 +38,13 @@
         <div class="main-content">
             <!-- Sidebar -->
             <div class="sidebar">
-                <div class="nav-item active">
+                <div class="nav-item active" onclick="showPanel('ordersPanel')">
                     <div class="nav-icon">
                         <i class="fas fa-list"></i>
                     </div>
                     <div>Order Management</div>
                 </div>
-                <div class="nav-item">
+                <div class="nav-item" onclick="showPanel('menuPanel')">
                     <div class="nav-icon">
                         <i class="fas fa-utensils"></i>
                     </div>
@@ -63,6 +63,329 @@
                     <div>Settings</div>
                 </div>
             </div>
+
+            <!-- Content Panel -->
+            <div class="content-panel">
+                <!-- Orders Panel -->
+                <div id="ordersPanel">
+                    <div class="panel-title">
+                        <i class="fas fa-list"></i> Pending Orders
+                    </div>
+
+                    <div class="orders-grid">
+                        <!-- Order Card 1 -->
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div class="order-id">Order #SU-1024</div>
+                                <div class="order-time">2 min ago</div>
+                            </div>
+                            <div class="order-table">
+                                <i class="fas fa-table"></i> Table 5
+                            </div>
+
+                            <div class="order-details">
+                                <div class="order-item">
+                                    <div>Masala Chiya x 2</div>
+                                    <div>Rs. 240</div>
+                                </div>
+                                <div class="order-item">
+                                    <div>Momo Platter</div>
+                                    <div>Rs. 320</div>
+                                </div>
+                                <div class="order-item">
+                                    <div>Extra Sugar</div>
+                                    <div>-</div>
+                                </div>
+
+                                <div class="order-total">
+                                    Total: Rs. 560
+                                </div>
+                            </div>
+
+                            <div class="order-actions">
+                                <button class="action-btn accept-btn">
+                                    <i class="fas fa-check-circle"></i> Accept
+                                </button>
+                                <button class="action-btn reject-btn">
+                                    <i class="fas fa-times-circle"></i> Reject
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Order Card 2 -->
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div class="order-id">Order #SU-1023</div>
+                                <div class="order-time">5 min ago</div>
+                            </div>
+                            <div class="order-table">
+                                <i class="fas fa-table"></i> Table 2
+                            </div>
+
+                            <div class="order-details">
+                                <div class="order-item">
+                                    <div>Ilam Gold Tea x 1</div>
+                                    <div>Rs. 180</div>
+                                </div>
+                                <div class="order-item">
+                                    <div>Himalayan Herbal Tea x 1</div>
+                                    <div>Rs. 150</div>
+                                </div>
+                                <div class="order-item">
+                                    <div>Samosa x 2</div>
+                                    <div>Rs. 160</div>
+                                </div>
+
+                                <div class="order-total">
+                                    Total: Rs. 490
+                                </div>
+                            </div>
+
+                            <div class="order-actions">
+                                <button class="action-btn accept-btn">
+                                    <i class="fas fa-check-circle"></i> Accept
+                                </button>
+                                <button class="action-btn reject-btn">
+                                    <i class="fas fa-times-circle"></i> Reject
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Order Card 3 -->
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div class="order-id">Order #SU-1022</div>
+                                <div class="order-time">8 min ago</div>
+                            </div>
+                            <div class="order-table">
+                                <i class="fas fa-table"></i> Table 8
+                            </div>
+
+                            <div class="order-details">
+                                <div class="order-item">
+                                    <div>Masala Chiya x 1</div>
+                                    <div>Rs. 120</div>
+                                </div>
+                                <div class="order-item">
+                                    <div>Chowmein</div>
+                                    <div>Rs. 220</div>
+                                </div>
+
+                                <div class="order-total">
+                                    Total: Rs. 340
+                                </div>
+                            </div>
+
+                            <div class="order-actions">
+                                <button class="action-btn accept-btn">
+                                    <i class="fas fa-check-circle"></i> Accept
+                                </button>
+                                <button class="action-btn reject-btn">
+                                    <i class="fas fa-times-circle"></i> Reject
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Order Card 4 -->
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div class="order-id">Order #SU-1021</div>
+                                <div class="order-time">12 min ago</div>
+                            </div>
+                            <div class="order-table">
+                                <i class="fas fa-table"></i> Table 3
+                            </div>
+
+                            <div class="order-details">
+                                <div class="order-item">
+                                    <div>Himalayan Herbal Tea x 3</div>
+                                    <div>Rs. 450</div>
+                                </div>
+                                <div class="order-item">
+                                    <div>Pakoda x 2</div>
+                                    <div>Rs. 180</div>
+                                </div>
+
+                                <div class="order-total">
+                                    Total: Rs. 630
+                                </div>
+                            </div>
+
+                            <div class="order-actions">
+                                <button class="action-btn accept-btn">
+                                    <i class="fas fa-check-circle"></i> Accept
+                                </button>
+                                <button class="action-btn reject-btn">
+                                    <i class="fas fa-times-circle"></i> Reject
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Panel -->
+                <div class="hidden" id="menuPanel">
+
+                    <!-- Main Content -->
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="panel-title">
+                                    <i class="fas fa-utensils"></i> Menu Management
+                                </div>
+                                <button class="add-btn" id="addItemBtn">
+                                    <i class="fas fa-plus"></i> Add Item
+                                </button>
+                            </div>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Price (in Rs.)</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Masala Chiya</td>
+                                        <td>Tea</td>
+                                        <td>30/-</td>
+                                        <td>
+                                            <button class="icon-btn edit" data-id="1">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="icon-btn delete" data-id="1">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ginger Lemon Chiya</td>
+                                        <td>Tea</td>
+                                        <td>25/-</td>
+                                        <td>
+                                            <button class="icon-btn edit" data-id="2">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="icon-btn delete" data-id="2">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Samosa</td>
+                                        <td>Snacks</td>
+                                        <td>25/-</td>
+                                        <td>
+                                            <button class="icon-btn edit" data-id="3">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="icon-btn delete" data-id="3">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Milk Tea</td>
+                                        <td>Tea</td>
+                                        <td>50/-</td>
+                                        <td>
+                                            <button class="icon-btn edit" data-id="4">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="icon-btn delete" data-id="4">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Butter Biscuit</td>
+                                        <td>Snacks</td>
+                                        <td>20/-</td>
+                                        <td>
+                                            <button class="icon-btn edit" data-id="5">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="icon-btn delete" data-id="5">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ilam Gold Tea</td>
+                                        <td>Tea</td>
+                                        <td>80/-</td>
+                                        <td>
+                                            <button class="icon-btn edit" data-id="6">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="icon-btn delete" data-id="6">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aloo Chop</td>
+                                        <td>Snacks</td>
+                                        <td>40/-</td>
+                                        <td>
+                                            <button class="icon-btn edit" data-id="7">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </button>
+                                            <button class="icon-btn delete" data-id="7">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <script>
+                    function showPanel(panelId) {
+                        // Hide all panels
+                        document.getElementById('ordersPanel').classList.add('hidden');
+                        document.getElementById('menuPanel').classList.add('hidden');
+
+                        // Show selected panel
+                        document.getElementById(panelId).classList.remove('hidden');
+
+                        // Update active tab
+                        const navItems = document.querySelectorAll('.nav-item');
+                        navItems.forEach(item => item.classList.remove('active'));
+
+                        // Set active based on panel
+                        if (panelId === 'ordersPanel') {
+                            navItems[0].classList.add('active');
+                        } else if (panelId === 'menuPanel') {
+                            navItems[1].classList.add('active');
+                        }
+                    }
+
+                    // Add event listeners to action buttons
+                    document.querySelectorAll('.action-btn').forEach(button => {
+                        button.addEventListener('click', function () {
+                            const orderCard = this.closest('.order-card');
+                            if (this.classList.contains('accept-btn')) {
+                                orderCard.style.borderLeft = '4px solid var(--accent)';
+                                this.innerHTML = '<i class="fas fa-check-circle"></i> Accepted';
+                                this.disabled = true;
+                                this.nextElementSibling.remove();
+                            } else if (this.classList.contains('reject-btn')) {
+                                orderCard.style.borderLeft = '4px solid #e74c3c';
+                                this.innerHTML = '<i class="fas fa-times-circle"></i> Rejected';
+                                this.disabled = true;
+                                this.previousElementSibling.remove();
+                            }
+                        });
+                    });
+                </script>
 </body>
 
 </html>
