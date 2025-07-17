@@ -362,7 +362,7 @@
         }
 
         .order-panel {
-            background: linear-gradient(to bottom right, var(--beige), var(--card));
+            background: #fef7e9;
             padding: 4rem;
             border-radius: 16px;
             box-shadow: var(--shadow);
@@ -388,7 +388,6 @@
         }
 
         label {
-            display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
             color: var(--text-dark);
@@ -407,6 +406,7 @@
             transition: var(--transition);
         }
 
+        /* click garda hune changes */
         input:focus,
         select:focus,
         textarea:focus {
@@ -455,6 +455,8 @@
 
         }
 
+
+        /* Footer content */
 
         footer {
             background: var(--text-dark);

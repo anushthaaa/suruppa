@@ -66,10 +66,12 @@
             font-weight: 700;
             color: var(--primary);
             letter-spacing: 0.5px;
+            cursor: pointer;
         }
 
         .logo-text span {
             color: var(--text-dark);
+            cursor: pointer;
         }
 
         .admin-info {
@@ -384,6 +386,7 @@
             color: #e61f1f;
         }
 
+        /* to hide another card while displaying the current clicked card */
         .hidden {
-            display: none !important;
+            display: none ;
         }

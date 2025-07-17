@@ -113,3 +113,9 @@ footer {
     background-color: #f4f1df;
     color: #555;
 }
+
+
+#go-back {
+    margin-top: 30px;
+    cursor: pointer;
+}
