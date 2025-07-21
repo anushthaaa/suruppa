@@ -67,6 +67,7 @@
             color: var(--primary);
             letter-spacing: 0.5px;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .logo-text span {
@@ -74,6 +75,7 @@
             cursor: pointer;
         }
 
+        
         .admin-info {
             display: flex;
             align-items: center;

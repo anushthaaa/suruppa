@@ -108,9 +108,9 @@
             text-decoration: none;
             font-weight: 500;
             color: var(--text-dark);
-            font-size: 15px;
+            font-size: .95rem;
             position: relative;
-            padding: 4.8px 0;
+            padding: 0.3rem 0;
             transition: var(--transition);
         }
 
@@ -568,4 +568,6 @@
             font-size: 0.9rem;
             opacity: 0.7;
         }
+
+
 
