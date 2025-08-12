@@ -10,7 +10,8 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" >
+    <link rel="stylesheet" href="fab.css">
 </head>
 
 <body>
@@ -18,22 +19,27 @@
         <div class="container">
             <div class="navbar">
                 <a href="#home" class="logo">
-                    <span class="logo__symbol">🍴</span>
+                    <span class="logo__symbol">
+                        <i class="fas fa-mug-hot"></i>
+                    </span>
                     <span class="logo__text">SUरुप्प</span>
                 </a>
                 <nav>
                     <ul>
                         <li><a href="#home" class="active">Home</a></li>
-                        <li><a href="#how">How It Works</a></li>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="#order">Order</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#how" class="hidden">How It Works</a></li>
+                        <li><a href="#menu" class="hidden">Menu</a></li>
+                        <li><a href="#order" class="hidden">Order</a></li>
+                        <li><a href="#about" class="hidden">About</a></li>
                     </ul>
                 </nav>
                 <!-- the emojies are used from fontawesome.com -->
-                <a href="login.html"> <button class="btn btn-outline">
+                 
+                <a href="login.html">
+                    <button class="btn btn-outline">
                         Admin Login <i class="fa-solid fa-right-to-bracket"></i>
-                    </button></a>
+                    </button>
+                </a>
 
             </div>
         </div>
@@ -102,7 +108,7 @@
 
                 <div class="menu-item">
                     <div class="menu-img">
-                        <img src="image\milk_tea.jpeg" alt="Milk Tea">
+                        <img src="image/milk_tea.jpeg" alt="Milk Tea">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Milk Tea</h3>
@@ -114,7 +120,7 @@
 
                 <div class="menu-item">
                     <div class="menu-img">
-                        <img src="image\honey_ginger_tea.jpeg" alt="Honey Ginger Tea">
+                        <img src="image/honey_ginger_tea.jpeg" alt="Honey Ginger Tea">
                     </div>
                     <div class="menu-content">
                         <h3 class="menu-title">Honey Ginger Tea</h3>
@@ -180,12 +186,13 @@
                     <a href="#" class="btn btn-outline">Learn More</a>
                 </div>
                 <div class="about-image">
-                    <img src="image\chiya1.jpg" alt="about-image">
+                    <img src="image/chiya1.jpg" alt="about-image">
                 </div>
             </div>
         </div>
     </div>
 
+    
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -227,6 +234,37 @@
         </div>
     </footer>
     
+
+    <div class="fab-container">
+    <button class="fab-main" id="fab-toggle">
+        <i class="fas fa-plus"></i>
+    </button>
+    <div class="fab-options" id="fab-options">
+        <button class="fab-option" data-section="reviews.html" title="Write a Review">
+            <i class="fas fa-star"></i>
+        </button>
+        <button class="fab-option" data-section="music.html" title="Request Music">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+</div>
+
+
+    <script>
+            // Select all nav links
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            // Remove active from all
+            navLinks.forEach(nav => nav.classList.remove('active'));
+            // Add active to the clicked link
+            this.classList.add('active');
+        });
+    });
+    </script>
+
+    <script src="fab.js"></script>
     
 </body>
 
