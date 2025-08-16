@@ -253,10 +253,10 @@
                                         <td>Tea</td>
                                         <td>30/-</td>
                                         <td>
-                                            <button class="icon-btn edit" data-id="1">
+                                            <button class="icon-btn edit" onclick="openEditModal()">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
-                                            <button class="icon-btn delete" data-id="1">
+                                            <button class="icon-btn delete" onclick="openDeleteModal()">
                                                 <i class="fa-solid fa-trash"></i>
                                             </button>
                                         </td>
@@ -266,10 +266,10 @@
                                         <td>Tea</td>
                                         <td>25/-</td>
                                         <td>
-                                            <button class="icon-btn edit" data-id="2">
+                                            <button class="icon-btn edit" onclick="openEditModal()">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
-                                            <button class="icon-btn delete" data-id="2">
+                                            <button class="icon-btn delete" onclick="openDeleteModal()">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </td>
@@ -279,10 +279,10 @@
                                         <td>Snacks</td>
                                         <td>25/-</td>
                                         <td>
-                                            <button class="icon-btn edit" data-id="3">
+                                            <button class="icon-btn edit" onclick="openEditModal()">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
-                                            <button class="icon-btn delete" data-id="3">
+                                            <button class="icon-btn delete" onclick="openDeleteModal()">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </td>
@@ -292,10 +292,10 @@
                                         <td>Tea</td>
                                         <td>50/-</td>
                                         <td>
-                                            <button class="icon-btn edit" data-id="4">
+                                            <button class="icon-btn edit" onclick="openEditModal()">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
-                                            <button class="icon-btn delete" data-id="4">
+                                            <button class="icon-btn delete" onclick="openDeleteModal()">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </td>
@@ -305,10 +305,10 @@
                                         <td>Snacks</td>
                                         <td>20/-</td>
                                         <td>
-                                            <button class="icon-btn edit" data-id="5">
+                                            <button class="icon-btn edit" onclick="openEditModal()">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
-                                            <button class="icon-btn delete" data-id="5">
+                                            <button class="icon-btn delete" onclick="openDeleteModal()">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </td>
@@ -318,10 +318,10 @@
                                         <td>Tea</td>
                                         <td>80/-</td>
                                         <td>
-                                            <button class="icon-btn edit" data-id="6">
+                                            <button class="icon-btn edit" onclick="openEditModal()">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
-                                            <button class="icon-btn delete" data-id="6">
+                                            <button class="icon-btn delete" onclick="openDeleteModal()">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </td>
@@ -331,10 +331,10 @@
                                         <td>Snacks</td>
                                         <td>40/-</td>
                                         <td>
-                                            <button class="icon-btn edit" data-id="7">
+                                            <button class="icon-btn edit" onclick="openEditModal()">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
-                                            <button class="icon-btn delete" data-id="7">
+                                            <button class="icon-btn delete" onclick="openDeleteModal()">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </td>
@@ -345,22 +345,98 @@
                     </div>
                 </div>
 
+                <!-- Add/Edit Modal -->
+                <div class="modal" id="addEditModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2><i class="fas fa-utensils"></i> <span id="modalTitle">Add Menu Item</span></h2>
+                            <button class="close-btn" onclick="closeModal('addEditModal')">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="itemName"><i class="fas fa-tag"></i> Name</label>
+                                <input type="text" id="itemName" placeholder="Enter item name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="itemDescription"><i class="fas fa-align-left"></i> Description</label>
+                                <textarea id="itemDescription" placeholder="Enter item description"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="itemPrice"><i class="fas fa-rupee-sign"></i> Price (Rs.)</label>
+                                <input type="number" id="itemPrice" placeholder="Enter price">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="itemCategory"><i class="fas fa-list"></i> Category</label>
+                                <select id="itemCategory">
+                                    <option value="tea">Tea</option>
+                                    <option value="snacks">Snacks</option>
+                                    <option value="main">Main Course</option>
+                                    <option value="dessert">Desserts</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="itemIcon"><i class="fas fa-coffee"></i> Icon</label>
+                                <select id="itemIcon">
+                                    <option value="coffee">Coffee Cup</option>
+                                    <option value="mug">Mug</option>
+                                    <option value="teapot">Teapot</option>
+                                    <option value="cookie">Cookie</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-outline" onclick="closeModal('addEditModal')">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                                <button class="btn btn-primary" id="saveItemBtn">
+                                    <i class="fas fa-save"></i> Save Item
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delete Confirmation Modal -->
+                <div class="modal" id="deleteModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2><i class="fas fa-trash"></i> Delete Item</h2>
+                            <button class="close-btn" onclick="closeModal('deleteModal')">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="delete-confirm">
+                            <p>Are you sure you want to delete <strong id="deleteItemName">Masala Chiya</strong>?</p>
+                            <p>This action cannot be undone.</p>
+                            <div class="delete-actions">
+                                <button class="btn btn-cancel" onclick="closeModal('deleteModal')">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                                <button class="btn btn-delete" onclick="deleteItem()">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
                 <script>
+                    // Show/hide panels
                     function showPanel(panelId) {
-                        // Hide all panels
                         document.getElementById('ordersPanel').classList.add('hidden');
                         document.getElementById('menuPanel').classList.add('hidden');
-
-                        // Show selected panel
                         document.getElementById(panelId).classList.remove('hidden');
 
-                        // Update active tab
                         const navItems = document.querySelectorAll('.nav-item');
                         navItems.forEach(item => item.classList.remove('active'));
 
-                        // Set active based on panel
                         if (panelId === 'ordersPanel') {
                             navItems[0].classList.add('active');
                         } else if (panelId === 'menuPanel') {
@@ -368,7 +444,70 @@
                         }
                     }
 
-                    // Add event listeners to action buttons
+                    // Modal functions
+                    function openAddModal() {
+                        document.getElementById('modalTitle').textContent = 'Add Menu Item';
+                        document.getElementById('itemName').value = '';
+                        document.getElementById('itemDescription').value = '';
+                        document.getElementById('itemPrice').value = '';
+                        document.getElementById('itemCategory').value = 'tea';
+                        document.getElementById('itemIcon').value = 'coffee';
+                        openModal('addEditModal');
+                    }
+
+                    function openEditModal() {
+                        document.getElementById('modalTitle').textContent = 'Edit Menu Item';
+                        document.getElementById('itemName').value = 'Masala Chiya';
+                        document.getElementById('itemDescription').value = 'Aromatic spiced tea with a blend of traditional Nepali spices.';
+                        document.getElementById('itemPrice').value = '30';
+                        document.getElementById('itemCategory').value = 'tea';
+                        document.getElementById('itemIcon').value = 'coffee';
+                        openModal('addEditModal');
+                    }
+
+                    function openDeleteModal() {
+                        document.getElementById('deleteItemName').textContent = 'Masala Chiya';
+                        openModal('deleteModal');
+                    }
+
+                    function openModal(modalId) {
+                        document.getElementById(modalId).classList.add('active');
+                    }
+
+                    function closeModal(modalId) {
+                        document.getElementById(modalId).classList.remove('active');
+                    }
+
+                    function saveItem() {
+                        const name = document.getElementById('itemName').value;
+                        if (name) {
+                            alert(`"${name}" saved successfully!`);
+                            closeModal('addEditModal');
+                        } else {
+                            alert('Please enter a name for the item');
+                        }
+                    }
+
+                    function deleteItem() {
+                        const name = document.getElementById('deleteItemName').textContent;
+                        alert(`"${name}" deleted successfully!`);
+                        closeModal('deleteModal');
+                    }
+
+                    // Add event listeners
+                    document.getElementById('addItemBtn').addEventListener('click', openAddModal);
+                    document.getElementById('saveItemBtn').addEventListener('click', saveItem);
+
+                    // Close modal when clicking outside
+                    document.querySelectorAll('.modal').forEach(modal => {
+                        modal.addEventListener('click', (e) => {
+                            if (e.target === modal) {
+                                closeModal(modal.id);
+                            }
+                        });
+                    });
+
+                    // Order action buttons
                     document.querySelectorAll('.action-btn').forEach(button => {
                         button.addEventListener('click', function () {
                             const orderCard = this.closest('.order-card');

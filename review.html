@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Write a Review</title>
+  <link rel="stylesheet" href="review.css" />
+  <script src="https://kit.fontawesome.com/a2d9d6a66a.js" crossorigin="anonymous"></script>
+  <!-- <style>
+    #reviews-list {
+      margin-top: 20px;
+    }
+
+    .review-card {
+      background: #fff8f0;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .review-card h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .review-card p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+  </style> -->
+</head>
+
+<body>
+  <div class="review-container">
+    <button class="close-btn" onclick="closePopup()">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <h1>Share Your Review ☕</h1>
+    <p>We'd love to hear your thoughts about our chiya and our pasal!</p>
+
+    <form class="review-form">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required />
+
+      <label for="rating">Rating</label>
+      <select id="rating">
+        <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+        <option value="4">⭐⭐⭐⭐ - Good</option>
+        <option value="3">⭐⭐⭐ - Average</option>
+        <option value="2">⭐⭐ - Poor</option>
+        <option value="1">⭐ - Terrible</option>
+      </select>
+
+      <label for="review">Your Review</label>
+      <textarea id="review" rows="4" placeholder="Write your feedback..." required></textarea>
+
+      <button type="submit" class="submit-btn">Submit Review</button>
+    </form>
+
+    <!-- Where reviews will show -->
+    <div id="reviews-list"></div>
+  </div>
+</body>
+
+</html>
