@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Music</title>
+  <link rel="stylesheet" href="music.css" />
+  <script src="https://kit.fontawesome.com/a2d9d6a66a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="music-container">
+    <button class="close-btn" onclick="closePopup()">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <h1>Request Music 🎵</h1>
+    <p>Add your favorite songs to our chiya pasal playlist!</p>
+
+    <form class="music-form">
+      <label for="song-name">Song Name</label>
+      <input type="text" id="song-name" placeholder="Enter song title" required />
+
+      <label for="artist-name">Artist Name</label>
+      <input type="text" id="artist-name" placeholder="Enter artist name" required />
+
+      <label for="requester-name">Your Name (Optional)</label>
+      <input type="text" id="requester-name" placeholder="Your name" />
+
+      <button type="submit" class="submit-btn">Add to Queue</button>
+    </form>
+
+    <!-- Music Queue -->
+    <div class="queue-section">
+      <h2>Music Queue 🎶</h2>
+      <div id="music-queue"></div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

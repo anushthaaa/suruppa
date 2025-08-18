@@ -283,6 +283,7 @@
       </div>
     </footer>
 
+    <!-- for the icon, review and music section -->
     <div class="fab-container">
       <button class="fab-main" id="fab-toggle">
         <i class="fas fa-plus"></i>
@@ -290,6 +291,7 @@
       <div class="fab-options" id="fab-options">
         <button
           class="fab-option"
+          id="fav-option1"
           data-section="reviews.html"
           title="Write a Review"
         >
@@ -297,6 +299,7 @@
         </button>
         <button
           class="fab-option"
+          id="fav-option2"
           data-section="music.html"
           title="Request Music"
         >
@@ -362,6 +365,83 @@
                 reviewsList.appendChild(reviewCard);
                 form.reset();
               });
+            });
+        });
+
+      document
+        .querySelector('[data-section="music.html"]')
+        .addEventListener("click", function () {
+          fetch("music.html")
+            .then((res) => res.text())
+            .then((data) => {
+              document.getElementById("reviewContent").innerHTML = data;
+              document.getElementById("reviewModal").style.display = "flex";
+
+              // === Attach events after loading ===
+              const form = document.querySelector(".music-form");
+              const musicQueue = document.getElementById("music-queue");
+              const closeBtn = document.querySelector(".close-btn");
+
+              let queueNumber = 1;
+
+              // Show empty queue message initially
+              if (musicQueue.children.length === 0) {
+                showEmptyQueueMessage();
+              }
+
+              // Close popup
+              closeBtn.addEventListener("click", () => {
+                document.getElementById("reviewModal").style.display = "none";
+              });
+
+              // Handle form submit
+              form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const songName = document.getElementById("song-name").value;
+                const artistName = document.getElementById("artist-name").value;
+                const requesterName =
+                  document.getElementById("requester-name").value;
+
+                // Remove empty queue message if it exists
+                const emptyMessage = document.querySelector(".empty-queue");
+                if (emptyMessage) {
+                  emptyMessage.remove();
+                }
+
+                const queueItem = document.createElement("div");
+                queueItem.className = "queue-item";
+                queueItem.innerHTML = `
+            <div class="queue-number">${queueNumber}</div>
+            <div class="song-info">${songName}</div>
+            <div class="artist-info">by ${artistName}</div>
+            ${
+              requesterName
+                ? `<div class="requester-info">Requested by ${requesterName}</div>`
+                : ""
+            }
+          `;
+
+                musicQueue.appendChild(queueItem);
+                queueNumber++;
+                form.reset();
+
+                // Add a small animation effect
+                queueItem.style.opacity = "0";
+                queueItem.style.transform = "translateY(20px)";
+                setTimeout(() => {
+                  queueItem.style.transition = "all 0.3s ease";
+                  queueItem.style.opacity = "1";
+                  queueItem.style.transform = "translateY(0)";
+                }, 10);
+              });
+
+              function showEmptyQueueMessage() {
+                const emptyDiv = document.createElement("div");
+                emptyDiv.className = "empty-queue";
+                emptyDiv.innerHTML =
+                  "No songs in queue yet. Add the first song! 🎵";
+                musicQueue.appendChild(emptyDiv);
+              }
             });
         });
     </script>

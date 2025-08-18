@@ -21,7 +21,11 @@
   position: relative;
   box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
   text-align: center;
+
+  max-height: 80vh;   /* prevent it from overflowing the screen */
+  overflow-y: auto;   /* enable vertical scrolling when content exceeds height */
 }
+
 
 /* Close button */
 .close-btn {
