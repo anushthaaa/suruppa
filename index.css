@@ -303,10 +303,21 @@ nav a.active {
   background-color: var(--card);
 }
 
+.menu-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--beige);
+  box-shadow: var(--shadow);
+  padding: 4rem 2rem;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
+  min-width: 100%;
+  flex-shrink: 0;
 }
 
 .menu-item {
@@ -356,6 +367,112 @@ nav a.active {
   color: var(--text-body);
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
+}
+
+/* Navigation Buttons */
+.menu-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: var(--transition);
+  z-index: 10;
+  box-shadow: var(--shadow);
+}
+
+.menu-nav:hover {
+  background: var(--primary-hover);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--shadow-hover);
+}
+
+.menu-nav:disabled {
+  background: var(--border);
+  cursor: not-allowed;
+  transform: translateY(-50%) scale(1);
+  color: var(--text-body);
+}
+
+.menu-nav.prev {
+  left: 10px;
+}
+
+.menu-nav.next {
+  right: 10px;
+}
+
+/* Menu Indicators */
+.menu-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.indicator.active {
+  background: var(--primary);
+}
+
+.indicator:hover {
+  background: var(--gold);
+  transform: scale(1.2);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 15.2px;
+  padding: 9.6px 22px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-outline {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--border);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .order-panel {

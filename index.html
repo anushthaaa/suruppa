@@ -110,48 +110,62 @@
         <p class="section-subtitle">
           Select your items and we'll get right on it.
         </p>
+        <div class="menu-container">
+          <button class="menu-nav prev" onclick="prevMenu()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="menu-nav next" onclick="nextMenu()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
 
-        <div class="menu-grid">
-          <div class="menu-item">
-            <div class="menu-img">
-              <img src="image\masala_chiya.jpeg" alt="Masala Chiya" />
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="menu-img">
+                <img src="image\masala_chiya.jpeg" alt="Masala Chiya" />
+              </div>
+              <div class="menu-content">
+                <h3 class="menu-title">Masala Chiya</h3>
+                <div class="menu-price">Rs. 35</div>
+                <p class="menu-desc">
+                  Aromatic spiced tea with a blend of traditional Nepali spices.
+                </p>
+                <button class="btn btn-outline">Add to Order</button>
+              </div>
             </div>
-            <div class="menu-content">
-              <h3 class="menu-title">Masala Chiya</h3>
-              <div class="menu-price">Rs. 35</div>
-              <p class="menu-desc">
-                Aromatic spiced tea with a blend of traditional Nepali spices.
-              </p>
-              <button class="btn btn-outline">Add to Order</button>
+
+            <div class="menu-item">
+              <div class="menu-img">
+                <img src="image/milk_tea.jpeg" alt="Milk Tea" />
+              </div>
+              <div class="menu-content">
+                <h3 class="menu-title">Milk Tea</h3>
+                <div class="menu-price">Rs. 25</div>
+                <p class="menu-desc">
+                  Classic Nepali milk tea, brewed to perfection.
+                </p>
+                <button class="btn btn-outline">Add to Order</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-img">
+                <img src="image/honey_ginger_tea.jpeg" alt="Honey Ginger Tea" />
+              </div>
+              <div class="menu-content">
+                <h3 class="menu-title">Honey Ginger Tea</h3>
+                <div class="menu-price">Rs. 150</div>
+                <p class="menu-desc">
+                  Refreshing and zesty tea, perfect for a cold day.
+                </p>
+                <button class="btn btn-outline">Add to Order</button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item">
-            <div class="menu-img">
-              <img src="image/milk_tea.jpeg" alt="Milk Tea" />
-            </div>
-            <div class="menu-content">
-              <h3 class="menu-title">Milk Tea</h3>
-              <div class="menu-price">Rs. 25</div>
-              <p class="menu-desc">
-                Classic Nepali milk tea, brewed to perfection.
-              </p>
-              <button class="btn btn-outline">Add to Order</button>
-            </div>
-          </div>
-
-          <div class="menu-item">
-            <div class="menu-img">
-              <img src="image/honey_ginger_tea.jpeg" alt="Honey Ginger Tea" />
-            </div>
-            <div class="menu-content">
-              <h3 class="menu-title">Honey Ginger Tea</h3>
-              <div class="menu-price">Rs. 150</div>
-              <p class="menu-desc">
-                Refreshing and zesty tea, perfect for a cold day.
-              </p>
-              <button class="btn btn-outline">Add to Order</button>
-            </div>
+          <div class="menu-indicators" id="menuIndicators">
+            <div class="indicator active" onclick="goToMenu(0)"></div>
+            <div class="indicator" onclick="goToMenu(1)"></div>
+            <div class="indicator" onclick="goToMenu(2)"></div>
           </div>
         </div>
       </div>
@@ -163,7 +177,7 @@
         <p class="section-subtitle">Enjoy our teas at your table in minutes</p>
 
         <div class="order-panel">
-          <form class="order-form">
+          <form class="order-form" onsubmit="submitOrder(event)">
             <div class="form-group">
               <label for="table">Table Number</label>
               <select id="table" required>
@@ -188,10 +202,9 @@
 
             <div class="form-group full">
               <label for="order">Your Order</label>
-              <textarea
-                id="order"
-                placeholder="Your order will be displayed here."
-              ></textarea>
+              <div id="order">
+                <div class="empty-order">Your order will be displayed here.</div>
+              </div>
             </div>
 
             <div class="form-group full">
@@ -265,6 +278,8 @@
               <li><a href="#menu">Menu</a></li>
               <li><a href="#order">Order Online</a></li>
               <li><a href="#about">About Us</a></li>
+              <li><a href="#review">Review</a></li>
+              <li><a href="#music">Music</a></li>
             </ul>
           </div>
 
