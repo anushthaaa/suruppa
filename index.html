@@ -129,7 +129,7 @@
                 <p class="menu-desc">
                   Aromatic spiced tea with a blend of traditional Nepali spices.
                 </p>
-                <button class="btn btn-outline">Add to Order</button>
+                <button type="button" class="btn btn-outline add-to-order-btn" data-name="Masala Chiya" data-price="35">Add to Order</button>
               </div>
             </div>
 
@@ -143,7 +143,7 @@
                 <p class="menu-desc">
                   Classic Nepali milk tea, brewed to perfection.
                 </p>
-                <button class="btn btn-outline">Add to Order</button>
+                <button type="button" class="btn btn-outline add-to-order-btn" data-name="Milk Tea" data-price="25">Add to Order</button>
               </div>
             </div>
 
@@ -157,7 +157,7 @@
                 <p class="menu-desc">
                   Refreshing and zesty tea, perfect for a cold day.
                 </p>
-                <button class="btn btn-outline">Add to Order</button>
+                <button type="button" class="btn btn-outline add-to-order-btn" data-name="Honey Ginger Tea" data-price="150">Add to Order</button>
               </div>
             </div>
           </div>
@@ -201,8 +201,8 @@
             </div>
 
             <div class="form-group full">
-              <label for="order">Your Order</label>
-              <div id="order">
+              <label for="order-items">Your Order</label>
+              <div id="order-items" class="order-items-container">
                 <div class="empty-order">Your order will be displayed here.</div>
               </div>
             </div>
@@ -340,6 +340,138 @@
           this.classList.add("active");
         });
       });
+
+      // Order management
+      let orderItems = [];
+
+      function updateOrderDisplay() {
+        const orderContainer = document.getElementById('order-items');
+        
+        if (orderItems.length === 0) {
+          orderContainer.innerHTML = '<div class="empty-order">Your order will be displayed here.</div>';
+          return;
+        }
+
+        let totalPrice = 0;
+        let orderHTML = '<div class="order-list">';
+        
+        orderItems.forEach((item, index) => {
+          totalPrice += item.price * item.quantity;
+          orderHTML += `
+            <div class="order-item-card">
+              <div class="order-item-info">
+                <div class="order-item-name">${item.name}</div>
+                <div class="order-item-price">Rs. ${item.price}</div>
+              </div>
+              <div class="order-item-controls">
+                <button type="button" class="qty-btn" onclick="decreaseQty(${index})">−</button>
+                <span class="qty-value">${item.quantity}</span>
+                <button type="button" class="qty-btn" onclick="increaseQty(${index})">+</button>
+                <button type="button" class="remove-btn" onclick="removeItem(${index})"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+          `;
+        });
+
+        orderHTML += `
+          <div class="order-total">
+            <strong>Total: Rs. ${totalPrice}</strong>
+          </div>
+        </div>`;
+
+        orderContainer.innerHTML = orderHTML;
+      }
+
+      function addToOrder(name, price) {
+        const existingItem = orderItems.find(item => item.name === name);
+        
+        if (existingItem) {
+          existingItem.quantity++;
+        } else {
+          orderItems.push({
+            name: name,
+            price: parseInt(price),
+            quantity: 1
+          });
+        }
+        
+        updateOrderDisplay();
+      }
+
+      function removeItem(index) {
+        orderItems.splice(index, 1);
+        updateOrderDisplay();
+      }
+
+      function increaseQty(index) {
+        orderItems[index].quantity++;
+        updateOrderDisplay();
+      }
+
+      function decreaseQty(index) {
+        if (orderItems[index].quantity > 1) {
+          orderItems[index].quantity--;
+        } else {
+          removeItem(index);
+        }
+        updateOrderDisplay();
+      }
+
+      // Add event listeners to all "Add to Order" buttons
+      document.querySelectorAll('.add-to-order-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const name = this.getAttribute('data-name');
+          const price = this.getAttribute('data-price');
+          addToOrder(name, price);
+          
+          // Scroll to order section
+          document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // Form submission
+      function submitOrder(event) {
+        event.preventDefault();
+        
+        const table = document.getElementById('table').value;
+        const name = document.getElementById('name').value;
+        
+        if (!table) {
+          alert('Please select a table number');
+          return;
+        }
+        
+        if (!name) {
+          alert('Please enter your name');
+          return;
+        }
+
+        if (orderItems.length === 0) {
+          alert('Please add items to your order');
+          return;
+        }
+
+        // Prepare order summary
+        let orderSummary = `Order Confirmation!\n\n`;
+        orderSummary += `Table: ${table}\n`;
+        orderSummary += `Name: ${name}\n\n`;
+        orderSummary += `Items:\n`;
+        
+        let total = 0;
+        orderItems.forEach(item => {
+          orderSummary += `- ${item.name} x${item.quantity} = Rs. ${item.price * item.quantity}\n`;
+          total += item.price * item.quantity;
+        });
+        
+        orderSummary += `\nTotal: Rs. ${total}`;
+        
+        alert(orderSummary);
+        
+        // Reset form and order
+        document.querySelector('.order-form').reset();
+        orderItems = [];
+        updateOrderDisplay();
+      }
     </script>
 
     <script src="fab.js"></script>
