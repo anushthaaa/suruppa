@@ -50,17 +50,11 @@
                     </div>
                     <div>Menu Management</div>
                 </div>
-                <div class="nav-item">
+                <div class="nav-item" onclick="showPanel('musicPanel')">
                     <div class="nav-icon">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="fas fa-music"></i>
                     </div>
-                    <div>Analytics</div>
-                </div>
-                <div class="nav-item">
-                    <div class="nav-icon">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <div>Settings</div>
+                    <div>Music Player</div>
                 </div>
             </div>
 
@@ -218,6 +212,129 @@
                                 <button class="action-btn reject-btn">
                                     <i class="fas fa-times-circle"></i> Reject
                                 </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Music Panel -->
+                <div class="hidden" id="musicPanel">
+                    <div class="panel-title">
+                        <i class="fas fa-music"></i> Background Music Player
+                    </div>
+
+                    <div class="music-container">
+                        <!-- Music Player Controls -->
+                        <div class="player-controls">
+                            <div class="player-info">
+                                <div class="now-playing-title">No Song Playing</div>
+                                <div class="now-playing-artist">Select a song to start</div>
+                            </div>
+                            <div class="player-buttons">
+                                <button class="music-btn" id="prevBtn" title="Previous">
+                                    <i class="fas fa-step-backward"></i>
+                                </button>
+                                <button class="music-btn play-btn" id="playBtn" title="Play/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="music-btn" id="nextBtn" title="Next">
+                                    <i class="fas fa-step-forward"></i>
+                                </button>
+                                <button class="music-btn" id="stopBtn" title="Stop">
+                                    <i class="fas fa-stop"></i>
+                                </button>
+                            </div>
+                            <div class="volume-control">
+                                <i class="fas fa-volume-up"></i>
+                                <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="currentTime">0:00</span>
+                                <span>/</span>
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+
+                        <!-- Hidden Audio Element -->
+                        <audio id="audioPlayer"></audio>
+
+                        <!-- Playlist Section -->
+                        <div class="playlist-section">
+                            <div class="playlist-header">
+                                <h3>Pending Orders Music Queue (Priority Order)</h3>
+                                <div class="filter-controls">
+                                    <input type="text" id="searchMusic" placeholder="Search music..." class="search-input">
+                                    <select id="priorityFilter" class="priority-filter">
+                                        <option value="all">All Priorities</option>
+                                        <option value="high">High Priority</option>
+                                        <option value="medium">Medium Priority</option>
+                                        <option value="low">Low Priority</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="music-grid" id="musicGrid">
+                                <!-- Music items will be dynamically loaded here based on pending orders -->
+                                <div class="music-item priority-high" data-priority="high" data-track-id="1">
+                                    <div class="music-item-header">
+                                        <div class="priority-badge high">HIGH PRIORITY</div>
+                                        <div class="order-ref">Order #SU-1024</div>
+                                    </div>
+                                    <div class="music-item-content">
+                                        <h4 class="music-title">Background Jazz Collection</h4>
+                                        <p class="music-artist">Smooth Ambient</p>
+                                        <p class="music-description">Relaxing jazz perfect for dining</p>
+                                    </div>
+                                    <div class="music-item-controls">
+                                        <button class="play-music-btn" data-src="music/jazz.mp3">
+                                            <i class="fas fa-play-circle"></i> Play
+                                        </button>
+                                        <span class="music-duration">3:45</span>
+                                    </div>
+                                </div>
+
+                                <div class="music-item priority-medium" data-priority="medium" data-track-id="2">
+                                    <div class="music-item-header">
+                                        <div class="priority-badge medium">MEDIUM PRIORITY</div>
+                                        <div class="order-ref">Order #SU-1023</div>
+                                    </div>
+                                    <div class="music-item-content">
+                                        <h4 class="music-title">Classical Instrumental</h4>
+                                        <p class="music-artist">Symphony Orchestra</p>
+                                        <p class="music-description">Elegant classical music collection</p>
+                                    </div>
+                                    <div class="music-item-controls">
+                                        <button class="play-music-btn" data-src="music/classical.mp3">
+                                            <i class="fas fa-play-circle"></i> Play
+                                        </button>
+                                        <span class="music-duration">4:20</span>
+                                    </div>
+                                </div>
+
+                                <div class="music-item priority-low" data-priority="low" data-track-id="3">
+                                    <div class="music-item-header">
+                                        <div class="priority-badge low">LOW PRIORITY</div>
+                                        <div class="order-ref">Order #SU-1022</div>
+                                    </div>
+                                    <div class="music-item-content">
+                                        <h4 class="music-title">Modern Pop Mix</h4>
+                                        <p class="music-artist">Contemporary Artists</p>
+                                        <p class="music-description">Upbeat modern pop collection</p>
+                                    </div>
+                                    <div class="music-item-controls">
+                                        <button class="play-music-btn" data-src="music/pop.mp3">
+                                            <i class="fas fa-play-circle"></i> Play
+                                        </button>
+                                        <span class="music-duration">3:30</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -432,6 +549,7 @@
                     function showPanel(panelId) {
                         document.getElementById('ordersPanel').classList.add('hidden');
                         document.getElementById('menuPanel').classList.add('hidden');
+                        document.getElementById('musicPanel').classList.add('hidden');
                         document.getElementById(panelId).classList.remove('hidden');
 
                         const navItems = document.querySelectorAll('.nav-item');
@@ -441,6 +559,8 @@
                             navItems[0].classList.add('active');
                         } else if (panelId === 'menuPanel') {
                             navItems[1].classList.add('active');
+                        } else if (panelId === 'musicPanel') {
+                            navItems[2].classList.add('active');
                         }
                     }
 
@@ -524,7 +644,203 @@
                             }
                         });
                     });
+
+                    // ===== MUSIC PLAYER FUNCTIONALITY =====
+                    let currentTrackIndex = 0;
+                    let isPlaying = false;
+                    const audioPlayer = document.getElementById('audioPlayer');
+                    const playBtn = document.getElementById('playBtn');
+
+                    // Initialize music player
+                    function initMusicPlayer() {
+                        // Play music button listeners
+                        document.querySelectorAll('.play-music-btn').forEach((btn, index) => {
+                            btn.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                const musicItem = this.closest('.music-item');
+                                const title = musicItem.querySelector('.music-title').textContent;
+                                const artist = musicItem.querySelector('.music-artist').textContent;
+                                const src = this.getAttribute('data-src');
+                                
+                                playTrack(src, title, artist, index);
+                            });
+                        });
+
+                        // Previous button
+                        if (document.getElementById('prevBtn')) {
+                            document.getElementById('prevBtn').addEventListener('click', previousTrack);
+                        }
+
+                        // Next button
+                        if (document.getElementById('nextBtn')) {
+                            document.getElementById('nextBtn').addEventListener('click', nextTrack);
+                        }
+
+                        // Stop button
+                        if (document.getElementById('stopBtn')) {
+                            document.getElementById('stopBtn').addEventListener('click', stopTrack);
+                        }
+
+                        // Play/Pause button
+                        if (playBtn) {
+                            playBtn.addEventListener('click', togglePlayPause);
+                        }
+
+                        // Volume control
+                        const volumeSlider = document.getElementById('volumeSlider');
+                        if (volumeSlider) {
+                            volumeSlider.addEventListener('change', setVolume);
+                        }
+
+                        // Update progress bar
+                        audioPlayer.addEventListener('timeupdate', updateProgressBar);
+                        audioPlayer.addEventListener('ended', nextTrack);
+
+                        // Priority filter
+                        const priorityFilter = document.getElementById('priorityFilter');
+                        if (priorityFilter) {
+                            priorityFilter.addEventListener('change', filterByPriority);
+                        }
+
+                        // Search functionality
+                        const searchMusic = document.getElementById('searchMusic');
+                        if (searchMusic) {
+                            searchMusic.addEventListener('keyup', searchMusic);
+                        }
+                    }
+
+                    // Play track function
+                    function playTrack(src, title, artist, index) {
+                        currentTrackIndex = index;
+                        audioPlayer.src = src;
+                        audioPlayer.play();
+                        isPlaying = true;
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                        playBtn.title = 'Pause';
+                        
+                        // Update now playing info
+                        document.querySelector('.now-playing-title').textContent = title;
+                        document.querySelector('.now-playing-artist').textContent = artist;
+
+                        // Visual feedback - highlight current track
+                        document.querySelectorAll('.music-item').forEach((item, i) => {
+                            item.classList.toggle('playing', i === index);
+                        });
+                    }
+
+                    // Toggle play/pause
+                    function togglePlayPause() {
+                        if (audioPlayer.src) {
+                            if (isPlaying) {
+                                audioPlayer.pause();
+                                isPlaying = false;
+                                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                                playBtn.title = 'Play';
+                            } else {
+                                audioPlayer.play();
+                                isPlaying = true;
+                                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                                playBtn.title = 'Pause';
+                            }
+                        }
+                    }
+
+                    // Next track (respecting priority)
+                    function nextTrack() {
+                        const visibleItems = document.querySelectorAll('.music-item:not(.hidden)');
+                        if (visibleItems.length === 0) return;
+                        currentTrackIndex = (currentTrackIndex + 1) % visibleItems.length;
+                        const nextItem = visibleItems[currentTrackIndex];
+                        const src = nextItem.querySelector('.play-music-btn').getAttribute('data-src');
+                        const title = nextItem.querySelector('.music-title').textContent;
+                        const artist = nextItem.querySelector('.music-artist').textContent;
+                        playTrack(src, title, artist, currentTrackIndex);
+                    }
+
+                    // Previous track
+                    function previousTrack() {
+                        const visibleItems = document.querySelectorAll('.music-item:not(.hidden)');
+                        if (visibleItems.length === 0) return;
+                        currentTrackIndex = (currentTrackIndex - 1 + visibleItems.length) % visibleItems.length;
+                        const prevItem = visibleItems[currentTrackIndex];
+                        const src = prevItem.querySelector('.play-music-btn').getAttribute('data-src');
+                        const title = prevItem.querySelector('.music-title').textContent;
+                        const artist = prevItem.querySelector('.music-artist').textContent;
+                        playTrack(src, title, artist, currentTrackIndex);
+                    }
+
+                    // Stop track
+                    function stopTrack() {
+                        audioPlayer.pause();
+                        audioPlayer.currentTime = 0;
+                        isPlaying = false;
+                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                        playBtn.title = 'Play';
+                        document.querySelector('.now-playing-title').textContent = 'No Song Playing';
+                        document.querySelector('.now-playing-artist').textContent = 'Select a song to start';
+                        document.querySelectorAll('.music-item').forEach(item => item.classList.remove('playing'));
+                    }
+
+                    // Set volume
+                    function setVolume() {
+                        const volume = document.getElementById('volumeSlider').value / 100;
+                        audioPlayer.volume = volume;
+                    }
+
+                    // Update progress bar
+                    function updateProgressBar() {
+                        const duration = audioPlayer.duration || 0;
+                        const currentTime = audioPlayer.currentTime || 0;
+                        const progress = (currentTime / duration) * 100 || 0;
+                        
+                        document.getElementById('progressFill').style.width = progress + '%';
+                        document.getElementById('currentTime').textContent = formatTime(currentTime);
+                        document.getElementById('duration').textContent = formatTime(duration);
+                    }
+
+                    // Format time
+                    function formatTime(seconds) {
+                        const mins = Math.floor(seconds / 60);
+                        const secs = Math.floor(seconds % 60);
+                        return `${mins}:${secs.toString().padStart(2, '0')}`;
+                    }
+
+                    // Filter by priority
+                    function filterByPriority() {
+                        const filter = document.getElementById('priorityFilter').value;
+                        document.querySelectorAll('.music-item').forEach(item => {
+                            if (filter === 'all' || item.getAttribute('data-priority') === filter) {
+                                item.classList.remove('hidden');
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        });
+                    }
+
+                    // Search music
+                    function searchMusic() {
+                        const searchTerm = document.getElementById('searchMusic').value.toLowerCase();
+                        document.querySelectorAll('.music-item').forEach(item => {
+                            const title = item.querySelector('.music-title').textContent.toLowerCase();
+                            const artist = item.querySelector('.music-artist').textContent.toLowerCase();
+                            if (title.includes(searchTerm) || artist.includes(searchTerm)) {
+                                item.classList.remove('hidden');
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        });
+                    }
+
+                    // Initialize music player when page loads
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', initMusicPlayer);
+                    } else {
+                        initMusicPlayer();
+                    }
                 </script>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
