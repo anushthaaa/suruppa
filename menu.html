@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu & Order • SUरुप्प Authentic Nepali Tea</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="fab.css" />
+    <link rel="stylesheet" href="modal.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <a href="home.html" class="logo">
+            <span class="logo__symbol">
+              <i class="fas fa-mug-hot"></i>
+            </span>
+            <span class="logo__text">SUरुप्प</span>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html#how">How It Works</a></li>
+              <li><a href="menu.html" class="active">Menu & Order</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="music.html">Music</a></li>
+              <li><a href="review.html">Reviews</a></li>
+            </ul>
+          </nav>
+
+          <a href="login.html">
+            <button class="btn btn-outline">
+              Admin Login <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="section menu" id="menu">
+      <div class="container">
+        <h2 class="section-title">Place Your Order</h2>
+        <p class="section-subtitle">
+          Select your items and we'll get right on it.
+        </p>
+        <div class="menu-container">
+          <button class="menu-nav prev" onclick="prevMenu()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="menu-nav next" onclick="nextMenu()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="menu-img">
+                <img src="image\masala_chiya.jpeg" alt="Masala Chiya" />
+              </div>
+              <div class="menu-content">
+                <h3 class="menu-title">Masala Chiya</h3>
+                <div class="menu-price">Rs. 35</div>
+                <p class="menu-desc">
+                  Aromatic spiced tea with a blend of traditional Nepali spices.
+                </p>
+                <button type="button" class="btn btn-outline add-to-order-btn" data-name="Masala Chiya" data-price="35">Add to Order</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-img">
+                <img src="image/milk_tea.jpeg" alt="Milk Tea" />
+              </div>
+              <div class="menu-content">
+                <h3 class="menu-title">Milk Tea</h3>
+                <div class="menu-price">Rs. 25</div>
+                <p class="menu-desc">
+                  Classic Nepali milk tea, brewed to perfection.
+                </p>
+                <button type="button" class="btn btn-outline add-to-order-btn" data-name="Milk Tea" data-price="25">Add to Order</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-img">
+                <img src="image/honey_ginger_tea.jpeg" alt="Honey Ginger Tea" />
+              </div>
+              <div class="menu-content">
+                <h3 class="menu-title">Honey Ginger Tea</h3>
+                <div class="menu-price">Rs. 150</div>
+                <p class="menu-desc">
+                  Refreshing and zesty tea, perfect for a cold day.
+                </p>
+                <button type="button" class="btn btn-outline add-to-order-btn" data-name="Honey Ginger Tea" data-price="150">Add to Order</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-img">
+                <img src="image\ilamGoldTea.jpg" alt="Ilam Gold Tea" />
+              </div>
+              <div class="menu-content">
+                <h3 class="menu-title">Ilam Gold Tea</h3>
+                <div class="menu-price">Rs. 80</div>
+                <p class="menu-desc">
+                  Premium tea from Ilam district with rich, smooth flavor.
+                </p>
+                <button type="button" class="btn btn-outline add-to-order-btn" data-name="Ilam Gold Tea" data-price="80">Add to Order</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-img">
+                <img src="image\himalayanHerbalTea.jpg" alt="Himalayan Herbal Tea" />
+              </div>
+              <div class="menu-content">
+                <h3 class="menu-title">Himalayan Herbal Tea</h3>
+                <div class="menu-price">Rs. 150</div>
+                <p class="menu-desc">
+                  Aromatic blend of Himalayan herbs for perfect wellness.
+                </p>
+                <button type="button" class="btn btn-outline add-to-order-btn" data-name="Himalayan Herbal Tea" data-price="150">Add to Order</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-img">
+                <img src="image\Samosa-square-FS.jpg" alt="Samosa" />
+              </div>
+              <div class="menu-content">
+                <h3 class="menu-title">Samosa</h3>
+                <div class="menu-price">Rs. 25</div>
+                <p class="menu-desc">
+                  Crispy fried pastry with spiced potato and peas filling.
+                </p>
+                <button type="button" class="btn btn-outline add-to-order-btn" data-name="Samosa" data-price="25">Add to Order</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-indicators" id="menuIndicators">
+            <div class="indicator active" onclick="goToMenu(0)"></div>
+            <div class="indicator" onclick="goToMenu(1)"></div>
+            <div class="indicator" onclick="goToMenu(2)"></div>
+            <div class="indicator" onclick="goToMenu(3)"></div>
+            <div class="indicator" onclick="goToMenu(4)"></div>
+            <div class="indicator" onclick="goToMenu(5)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="order">
+      <div class="container">
+        <h2 class="section-title">Place Your Order</h2>
+        <p class="section-subtitle">Enjoy our teas at your table in minutes</p>
+
+        <div class="order-panel">
+          <form class="order-form" onsubmit="submitOrder(event)">
+            <div class="form-group">
+              <label for="table">Table Number</label>
+              <select id="table" required>
+                <option value="">Select your table</option>
+                <option value="1">Table 1</option>
+                <option value="2">Table 2</option>
+                <option value="3">Table 3</option>
+                <option value="4">Table 4</option>
+                <option value="5">Table 5</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+
+            <div class="form-group full">
+              <label for="order-items">Your Order</label>
+              <div id="order-items" class="order-items-container">
+                <div class="empty-order">Your order will be displayed here.</div>
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <button type="submit" class="btn btn-primary" style="width: 100%">
+                Place Order <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">SU<span>रुप्प</span></div>
+            <p>
+              Bringing authentic Nepali tea culture to your table since 2025.
+              Experience the taste of the Himalayas with every cup.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html#how">How It Works</a></li>
+              <li><a href="menu.html">Menu & Order</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="review.html">Review</a></li>
+              <li><a href="music.html">Music</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h3 class="footer-title">Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+            <p><i class="fas fa-phone"></i> +977 9841XXXXXX</p>
+            <p><i class="fas fa-envelope"></i> info@surauppa.com</p>
+            <p><i class="fas fa-clock"></i> Open Daily: 7AM - 9PM</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          &copy; 2023 SUरुप्प Nepali Tea. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- for the icon, review and music section -->
+    <div class="fab-container">
+      <button class="fab-main" id="fab-toggle">
+        <i class="fas fa-plus"></i>
+      </button>
+      <div class="fab-options" id="fab-options">
+        <button
+          class="fab-option"
+          id="fav-option1"
+          data-section="review.html"
+          title="Write a Review"
+        >
+          <i class="fas fa-star"></i>
+        </button>
+        <button
+          class="fab-option"
+          id="fav-option2"
+          data-section="music.html"
+          title="Request Music"
+        >
+          <i class="fas fa-music"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="fab.js"></script>
+
+    <script>
+      // ===== MENU NAVIGATION =====
+      let currentMenuIndex = 0;
+      const MENU_ITEM_SHOWN = 3; // Number of items visible at once
+      const TOTAL_MENU_ITEMS = 6; // Total menu items
+
+      function updateMenuView() {
+        const menuGrid = document.querySelector('.menu-grid');
+        // Shift by 1 item width (each item is 1/6 of the grid)
+        const shiftPercentage = (currentMenuIndex * (100 / TOTAL_MENU_ITEMS));
+        menuGrid.style.transform = `translateX(-${shiftPercentage}%)`;
+
+        // Update indicator dots - show which item we're starting from
+        document.querySelectorAll('.menu-indicators .indicator').forEach((indicator, index) => {
+          indicator.classList.toggle('active', index === currentMenuIndex);
+        });
+      }
+
+      function nextMenu() {
+        // Shift by 1 item, wrap around when at the end
+        currentMenuIndex = (currentMenuIndex + 1) % (TOTAL_MENU_ITEMS - MENU_ITEM_SHOWN + 1);
+        updateMenuView();
+      }
+
+      function prevMenu() {
+        // Shift by 1 item, wrap around when at the beginning
+        currentMenuIndex = (currentMenuIndex - 1 + (TOTAL_MENU_ITEMS - MENU_ITEM_SHOWN + 1)) % (TOTAL_MENU_ITEMS - MENU_ITEM_SHOWN + 1);
+        updateMenuView();
+      }
+
+      function goToMenu(index) {
+        // Go directly to a specific item
+        currentMenuIndex = Math.min(index, TOTAL_MENU_ITEMS - MENU_ITEM_SHOWN);
+        updateMenuView();
+      }
+
+      // Order management
+      let orderItems = [];
+
+      function updateOrderDisplay() {
+        const orderContainer = document.getElementById('order-items');
+        
+        if (orderItems.length === 0) {
+          orderContainer.innerHTML = '<div class="empty-order">Your order will be displayed here.</div>';
+          return;
+        }
+
+        let totalPrice = 0;
+        let orderHTML = '<div class="order-list">';
+        
+        orderItems.forEach((item, index) => {
+          totalPrice += item.price * item.quantity;
+          orderHTML += `
+            <div class="order-item-card">
+              <div class="order-item-info">
+                <div class="order-item-name">${item.name}</div>
+                <div class="order-item-price">Rs. ${item.price}</div>
+              </div>
+              <div class="order-item-controls">
+                <button type="button" class="qty-btn" onclick="decreaseQty(${index})">−</button>
+                <span class="qty-value">${item.quantity}</span>
+                <button type="button" class="qty-btn" onclick="increaseQty(${index})">+</button>
+                <button type="button" class="remove-btn" onclick="removeItem(${index})"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+          `;
+        });
+
+        orderHTML += `
+          <div class="order-total">
+            <strong>Total: Rs. ${totalPrice}</strong>
+          </div>
+        </div>`;
+
+        orderContainer.innerHTML = orderHTML;
+      }
+
+      function addToOrder(name, price) {
+        const existingItem = orderItems.find(item => item.name === name);
+        
+        if (existingItem) {
+          existingItem.quantity++;
+        } else {
+          orderItems.push({
+            name: name,
+            price: parseInt(price),
+            quantity: 1
+          });
+        }
+        
+        updateOrderDisplay();
+      }
+
+      function removeItem(index) {
+        orderItems.splice(index, 1);
+        updateOrderDisplay();
+      }
+
+      function increaseQty(index) {
+        orderItems[index].quantity++;
+        updateOrderDisplay();
+      }
+
+      function decreaseQty(index) {
+        if (orderItems[index].quantity > 1) {
+          orderItems[index].quantity--;
+        } else {
+          removeItem(index);
+        }
+        updateOrderDisplay();
+      }
+
+      // Add event listeners to all "Add to Order" buttons
+      document.querySelectorAll('.add-to-order-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const name = this.getAttribute('data-name');
+          const price = this.getAttribute('data-price');
+          addToOrder(name, price);
+          
+          // Scroll to order section
+          document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // Form submission
+      function submitOrder(event) {
+        event.preventDefault();
+        
+        const table = document.getElementById('table').value;
+        const name = document.getElementById('name').value;
+        
+        if (!table) {
+          alert('Please select a table number');
+          return;
+        }
+        
+        if (!name) {
+          alert('Please enter your name');
+          return;
+        }
+
+        if (orderItems.length === 0) {
+          alert('Please add items to your order');
+          return;
+        }
+
+        // Prepare order summary
+        let orderSummary = `Order Confirmation!\n\n`;
+        orderSummary += `Table: ${table}\n`;
+        orderSummary += `Name: ${name}\n\n`;
+        orderSummary += `Items:\n`;
+        
+        let total = 0;
+        orderItems.forEach(item => {
+          orderSummary += `- ${item.name} x${item.quantity} = Rs. ${item.price * item.quantity}\n`;
+          total += item.price * item.quantity;
+        });
+        
+        orderSummary += `\nTotal: Rs. ${total}`;
+        
+        alert(orderSummary);
+        
+        // Reset form and order
+        document.querySelector('.order-form').reset();
+        orderItems = [];
+        updateOrderDisplay();
+      }
+    </script>
+  </body>
+</html>

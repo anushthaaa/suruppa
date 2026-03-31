@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About • SUरुप्प Authentic Nepali Tea</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="fab.css" />
+    <link rel="stylesheet" href="modal.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <a href="home.html" class="logo">
+            <span class="logo__symbol">
+              <i class="fas fa-mug-hot"></i>
+            </span>
+            <span class="logo__text">SUरुप्प</span>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html#how">How It Works</a></li>
+              <li><a href="menu.html">Menu & Order</a></li>
+              <li><a href="about.html" class="active">About</a></li>
+              <li><a href="music.html">Music</a></li>
+              <li><a href="review.html">Reviews</a></li>
+            </ul>
+          </nav>
+
+          <a href="login.html">
+            <button class="btn btn-outline">
+              Admin Login <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="section about">
+      <div class="container">
+        <h2 class="section-title">Our Tea Journey</h2>
+        <p class="section-subtitle">Tech in Tea.</p>
+
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Authentic Nepali Tea Experience</h2>
+            <p>
+              We source our tea leaves directly from the lush gardens of eastern
+              Nepal, where the cool, misty hills of Ilam create the perfect
+              conditions for growing rich, flavorful tea. These leaves come from
+              farms that follow sustainable practices and carry generations of
+              tradition.
+            </p>
+            <p>
+              Our blends are crafted to keep the original taste of Nepali chiya
+              alive, while also offering something refreshing for today's tea
+              lovers. We aim for a balance—something that feels both familiar
+              and new.
+            </p>
+            <p>
+              With SUरुप्प, we're not just serving tea—we're sharing a moment. A
+              small break in a busy day, a connection between friends, or a
+              quiet sip of calm. That's the experience we want to bring to every
+              cup.
+            </p>
+            <a href="menu.html" class="btn btn-outline">Order Now</a>
+          </div>
+          <div class="about-image">
+            <img src="image/chiya1.jpg" alt="about-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">SU<span>रुप्प</span></div>
+            <p>
+              Bringing authentic Nepali tea culture to your table since 2025.
+              Experience the taste of the Himalayas with every cup.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html#how">How It Works</a></li>
+              <li><a href="menu.html">Menu & Order</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="review.html">Review</a></li>
+              <li><a href="music.html">Music</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h3 class="footer-title">Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+            <p><i class="fas fa-phone"></i> +977 9841XXXXXX</p>
+            <p><i class="fas fa-envelope"></i> info@surauppa.com</p>
+            <p><i class="fas fa-clock"></i> Open Daily: 7AM - 9PM</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          &copy; 2023 SUरुप्प Nepali Tea. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- for the icon, review and music section -->
+    <div class="fab-container">
+      <button class="fab-main" id="fab-toggle">
+        <i class="fas fa-plus"></i>
+      </button>
+      <div class="fab-options" id="fab-options">
+        <button
+          class="fab-option"
+          id="fav-option1"
+          data-section="review.html"
+          title="Write a Review"
+        >
+          <i class="fas fa-star"></i>
+        </button>
+        <button
+          class="fab-option"
+          id="fav-option2"
+          data-section="music.html"
+          title="Request Music"
+        >
+          <i class="fas fa-music"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="fab.js"></script>
+  </body>
+</html>

@@ -1,44 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music • SUरुप्प Authentic Nepali Tea</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="fab.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="music.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request Music</title>
-  <link rel="stylesheet" href="music.css" />
-  <script src="https://kit.fontawesome.com/a2d9d6a66a.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <a href="home.html" class="logo">
+            <span class="logo__symbol">
+              <i class="fas fa-mug-hot"></i>
+            </span>
+            <span class="logo__text">SUरुप्प</span>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html#how">How It Works</a></li>
+              <li><a href="menu.html">Menu & Order</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="music.html" class="active">Music</a></li>
+              <li><a href="review.html">Reviews</a></li>
+            </ul>
+          </nav>
 
-<body>
-  <div class="music-container">
-    <button class="close-btn" onclick="closePopup()">
-      <i class="fas fa-times"></i>
-    </button>
+          <a href="login.html">
+            <button class="btn btn-outline">
+              Admin Login <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
 
-    <h1>Request Music 🎵</h1>
-    <p>Add your favorite songs to our chiya pasal playlist!</p>
+    <div class="section">
+      <div class="container">
+        <h1 class="section-title">Request Music 🎵</h1>
+        <p class="section-subtitle">Add your favorite songs to our chiya pasal playlist!</p>
 
-    <form class="music-form">
-      <label for="song-name">Song Name</label>
-      <input type="text" id="song-name" placeholder="Enter song title" required />
+        <div class="music-container">
+          <form class="music-form">
+            <label for="song-name">Song Name</label>
+            <input type="text" id="song-name" placeholder="Enter song title" required />
 
-      <label for="artist-name">Artist Name</label>
-      <input type="text" id="artist-name" placeholder="Enter artist name" required />
+            <label for="artist-name">Artist Name</label>
+            <input type="text" id="artist-name" placeholder="Enter artist name" required />
 
-      <label for="requester-name">Your Name (Optional)</label>
-      <input type="text" id="requester-name" placeholder="Your name" />
+            <label for="requester-name">Your Name (Optional)</label>
+            <input type="text" id="requester-name" placeholder="Your name" />
 
-      <button type="submit" class="submit-btn">Add to Queue</button>
-    </form>
+            <button type="submit" class="submit-btn">Add to Queue</button>
+          </form>
 
-    <!-- Music Queue -->
-    <div class="queue-section">
-      <h2>Music Queue 🎶</h2>
-      <div id="music-queue"></div>
+          <!-- Music Queue -->
+          <div class="queue-section">
+            <h2>Music Queue 🎶</h2>
+            <div id="music-queue"></div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">SU<span>रुप्प</span></div>
+            <p>
+              Bringing authentic Nepali tea culture to your table since 2025.
+              Experience the taste of the Himalayas with every cup.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
 
-</body>
+          <div class="footer-links">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html#how">How It Works</a></li>
+              <li><a href="menu.html">Menu & Order</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="review.html">Review</a></li>
+              <li><a href="music.html">Music</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h3 class="footer-title">Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+            <p><i class="fas fa-phone"></i> +977 9841XXXXXX</p>
+            <p><i class="fas fa-envelope"></i> info@surauppa.com</p>
+            <p><i class="fas fa-clock"></i> Open Daily: 7AM - 9PM</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          &copy; 2025 SUरुप्प Nepali Tea. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <div class="fab" id="fab-toggle">
+      <i class="fas fa-circle-plus"></i>
+      <div class="fab-options" id="fab-options">
+        <a href="music.html" class="fab-option" data-section="music"
+          ><i class="fas fa-music"></i> Music</a
+        >
+        <a href="review.html" class="fab-option" data-section="review"
+          ><i class="fas fa-star"></i> Review</a
+        >
+      </div>
+    </div>
+
+    <script src="fab.js"></script>
+    <script>
+      let musicQueue = JSON.parse(localStorage.getItem("musicQueue")) || [];
+
+      function displayMusicQueue() {
+        const queueContainer = document.getElementById("music-queue");
+        if (musicQueue.length === 0) {
+          queueContainer.innerHTML = "<p>No songs in queue yet</p>";
+          return;
+        }
+        queueContainer.innerHTML = musicQueue.map((song, index) => `
+          <div class="queue-item">
+            <div>
+              <h4>${index + 1}. ${song.name}</h4>
+              <p>Artist: ${song.artist}</p>
+              <p>Requested by: ${song.requester || "Anonymous"}</p>
+            </div>
+            <button onclick="removeFromQueue(${index})">Remove</button>
+          </div>
+        `).join("");
+      }
+
+      function removeFromQueue(index) {
+        musicQueue.splice(index, 1);
+        localStorage.setItem("musicQueue", JSON.stringify(musicQueue));
+        displayMusicQueue();
+      }
+
+      document.querySelector(".music-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const songName = document.getElementById("song-name").value.trim();
+        const artistName = document.getElementById("artist-name").value.trim();
+        const requesterName = document.getElementById("requester-name").value.trim();
+
+        if (songName && artistName) {
+          musicQueue.push({
+            name: songName,
+            artist: artistName,
+            requester: requesterName,
+            timestamp: new Date().toLocaleString()
+          });
+          localStorage.setItem("musicQueue", JSON.stringify(musicQueue));
+          displayMusicQueue();
+          this.reset();
+          alert("✅ Song added to queue!");
+        }
+      });
+
+      // Display queue on page load
+      document.addEventListener("DOMContentLoaded", displayMusicQueue);
+    </script>
+  </body>
 
 </html>

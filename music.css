@@ -1,103 +1,193 @@
-/* Modal background */
-.music-modal {
-  display: none; /* hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-/* Card container */
+/* Music Container */
 .music-container {
-  background: #fff;
-  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Form Section */
+.music-form {
+  background: linear-gradient(135deg, #fff8f0 0%, #fef5f0 100%);
+  padding: 30px;
   border-radius: 12px;
-  width: 450px;
-  max-height: 80vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
-  text-align: center;
-}
-
-/* Close button */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: none;
-  background: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #666;
-}
-
-.close-btn:hover {
-  color: #000;
+  box-shadow: 0px 4px 15px rgba(192, 90, 44, 0.1);
+  border: 1px solid #f0e6dc;
 }
 
 /* Form elements */
 .music-form label {
   display: block;
   text-align: left;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #333;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #c05a2c;
+  font-size: 0.95rem;
+}
+
+.music-form label:first-of-type {
+  margin-top: 0;
 }
 
 .music-form input {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  padding: 12px 15px;
+  margin-bottom: 3px;
+  border-radius: 8px;
+  border: 2px solid #e0ccc0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  background: #ffffff;
+  transition: all 0.3s ease;
 }
 
 .music-form input:focus {
   outline: none;
-  border-color: #6a4e42;
-  box-shadow: 0 0 5px rgba(106, 78, 66, 0.3);
+  border-color: #c05a2c;
+  box-shadow: 0 0 10px rgba(192, 90, 44, 0.2);
+  background: #fffbf8;
 }
 
 .submit-btn {
-  margin-top: 15px;
-  background: #6a4e42;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #c05a2c 0%, #a84800 100%);
   color: white;
   border: none;
-  padding: 12px;
+  padding: 14px 30px;
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(192, 90, 44, 0.25);
 }
 
 .submit-btn:hover {
-  background: #4e362c;
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(192, 90, 44, 0.35);
+  background: linear-gradient(135deg, #a84800 0%, #8a3a00 100%);
+}
+
+.submit-btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Queue section */
 .queue-section {
-  margin-top: 25px;
-  text-align: left;
+  background: linear-gradient(135deg, #fff8f0 0%, #fef5f0 100%);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(192, 90, 44, 0.1);
+  border: 1px solid #f0e6dc;
 }
 
 .queue-section h2 {
   text-align: center;
-  color: #6a4e42;
-  margin-bottom: 15px;
+  color: #c05a2c;
+  margin: 0 0 20px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 /* Queue item styling */
 .queue-item {
+  background: linear-gradient(135deg, #ffffff 0%, #fdfaf7 100%);
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #c05a2c;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.queue-item:hover {
+  box-shadow: 0px 6px 16px rgba(192, 90, 44, 0.15);
+  transform: translateX(5px);
+}
+
+.queue-item h4 {
+  margin: 0 0 8px 0;
+  color: #c05a2c;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.queue-item p {
+  margin: 6px 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.queue-item p:last-child {
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+}
+
+.queue-item button {
+  padding: 8px 16px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 8px rgba(231, 76, 60, 0.2);
+}
+
+.queue-item button:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* Empty state */
+#music-queue > p {
+  text-align: center;
+  color: #bbb;
+  padding: 40px 20px;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .music-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .music-form,
+  .queue-section {
+    padding: 20px;
+  }
+
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .queue-item {
+    flex-direction: column;
+  }
+
+  .queue-item button {
+    width: 100%;
+  }
+}
   background: #f8f5f0;
   border: 1px solid #e0d5c7;
   padding: 12px;

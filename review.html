@@ -1,68 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews • SUरुप्प Authentic Nepali Tea</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="fab.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="review.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Write a Review</title>
-  <link rel="stylesheet" href="review.css" />
-  <script src="https://kit.fontawesome.com/a2d9d6a66a.js" crossorigin="anonymous"></script>
-  <!-- <style>
-    #reviews-list {
-      margin-top: 20px;
-    }
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <a href="home.html" class="logo">
+            <span class="logo__symbol">
+              <i class="fas fa-mug-hot"></i>
+            </span>
+            <span class="logo__text">SUरुप्प</span>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html#how">How It Works</a></li>
+              <li><a href="menu.html">Menu & Order</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="music.html">Music</a></li>
+              <li><a href="review.html" class="active">Reviews</a></li>
+            </ul>
+          </nav>
 
-    .review-card {
-      background: #fff8f0;
-      border: 1px solid #ddd;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 8px;
-    }
+          <a href="login.html">
+            <button class="btn btn-outline">
+              Admin Login <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
 
-    .review-card h3 {
-      margin: 0;
-      font-size: 16px;
-    }
+    <div class="section">
+      <div class="container">
+        <h1 class="section-title">Share Your Review ☕</h1>
+        <p class="section-subtitle">We'd love to hear your thoughts about our chiya and our pasal!</p>
 
-    .review-card p {
-      margin: 5px 0 0;
-      font-size: 14px;
-    }
-  </style> -->
-</head>
+        <div class="review-container">
+          <form class="review-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required />
 
-<body>
-  <div class="review-container">
-    <button class="close-btn" onclick="closePopup()">
-      <i class="fas fa-times"></i>
-    </button>
+            <label for="rating">Rating</label>
+            <select id="rating">
+              <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+              <option value="4">⭐⭐⭐⭐ - Good</option>
+              <option value="3">⭐⭐⭐ - Average</option>
+              <option value="2">⭐⭐ - Poor</option>
+              <option value="1">⭐ - Terrible</option>
+            </select>
 
-    <h1>Share Your Review ☕</h1>
-    <p>We'd love to hear your thoughts about our chiya and our pasal!</p>
+            <label for="review">Your Review</label>
+            <textarea id="review" rows="4" placeholder="Write your feedback..." required></textarea>
 
-    <form class="review-form">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required />
+            <button type="submit" class="submit-btn">Submit Review</button>
+          </form>
 
-      <label for="rating">Rating</label>
-      <select id="rating">
-        <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
-        <option value="4">⭐⭐⭐⭐ - Good</option>
-        <option value="3">⭐⭐⭐ - Average</option>
-        <option value="2">⭐⭐ - Poor</option>
-        <option value="1">⭐ - Terrible</option>
-      </select>
+          <!-- Where reviews will show -->
+          <div id="reviews-list"></div>
+        </div>
+      </div>
+    </div>
 
-      <label for="review">Your Review</label>
-      <textarea id="review" rows="4" placeholder="Write your feedback..." required></textarea>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">SU<span>रुप्प</span></div>
+            <p>
+              Bringing authentic Nepali tea culture to your table since 2025.
+              Experience the taste of the Himalayas with every cup.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
 
-      <button type="submit" class="submit-btn">Submit Review</button>
-    </form>
+          <div class="footer-links">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html#how">How It Works</a></li>
+              <li><a href="menu.html">Menu & Order</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="review.html">Review</a></li>
+              <li><a href="music.html">Music</a></li>
+            </ul>
+          </div>
 
-    <!-- Where reviews will show -->
-    <div id="reviews-list"></div>
-  </div>
-</body>
+          <div class="footer-contact">
+            <h3 class="footer-title">Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+            <p><i class="fas fa-phone"></i> +977 9841XXXXXX</p>
+            <p><i class="fas fa-envelope"></i> info@surauppa.com</p>
+            <p><i class="fas fa-clock"></i> Open Daily: 7AM - 9PM</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          &copy; 2025 SUरुप्प Nepali Tea. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <div class="fab" id="fab-toggle">
+      <i class="fas fa-circle-plus"></i>
+      <div class="fab-options" id="fab-options">
+        <a href="music.html" class="fab-option" data-section="music"
+          ><i class="fas fa-music"></i> Music</a
+        >
+        <a href="review.html" class="fab-option" data-section="review"
+          ><i class="fas fa-star"></i> Review</a
+        >
+      </div>
+    </div>
+
+    <script src="fab.js"></script>
+    <script>
+      let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+      function displayReviews() {
+        const reviewsList = document.getElementById("reviews-list");
+        if (reviews.length === 0) {
+          reviewsList.innerHTML = "<p>No reviews yet. Be the first to share!</p>";
+          return;
+        }
+        reviewsList.innerHTML = reviews.map((review, index) => `
+          <div class="review-card">
+            <div>
+              <h3>${review.name}</h3>
+              <p>${"⭐".repeat(review.rating)}</p>
+              <p>${review.review}</p>
+              <p>${new Date(review.timestamp).toLocaleDateString()}</p>
+            </div>
+            <button onclick="deleteReview(${index})">Delete</button>
+          </div>
+        `).join("");
+      }
+
+      function deleteReview(index) {
+        reviews.splice(index, 1);
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+        displayReviews();
+      }
+
+      document.querySelector(".review-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const rating = parseInt(document.getElementById("rating").value);
+        const reviewText = document.getElementById("review").value.trim();
+
+        if (name && rating && reviewText) {
+          reviews.unshift({
+            name: name,
+            rating: rating,
+            review: reviewText,
+            timestamp: new Date().toISOString()
+          });
+          localStorage.setItem("reviews", JSON.stringify(reviews));
+          displayReviews();
+          this.reset();
+          alert("✅ Review submitted successfully!");
+        }
+      });
+
+      // Display reviews on page load
+      document.addEventListener("DOMContentLoaded", displayReviews);
+    </script>
+  </body>
 
 </html>
