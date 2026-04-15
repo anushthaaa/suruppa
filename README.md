@@ -1,6 +1,7 @@
 # SUरुप्प - Authentic Nepali Tea Ordering System
 
 A modern web application for ordering authentic Nepali tea directly from your table.
+Live URL: [https://su-ruppa.web.app/home.html]
 
 ---
 
